@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210 40% 98%);
+  --foreground: hsl(222.2 84% 4.9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222.2 84% 4.9%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222.2 84% 4.9%);
+  --primary: hsl(217.2 91.2% 59.8%);
+  --primary-foreground: hsl(210 40% 98%);
+  --secondary: hsl(210 40% 96%);
+  --secondary-foreground: hsl(222.2 84% 4.9%);
+  --muted: hsl(210 40% 96%);
+  --muted-foreground: hsl(215.4 16.3% 46.9%);
+  --accent: hsl(210 40% 96%);
+  --accent-foreground: hsl(222.2 84% 4.9%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(214.3 31.8% 91.4%);
+  --input: hsl(214.3 31.8% 91.4%);
+  --ring: hsl(217.2 91.2% 59.8%);
+  --chart-1: hsl(217.2 91.2% 59.8%);
+  --chart-2: hsl(159.7826 100% 36.0784%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --radius: 0.5rem;
+  
+  /* Dark theme colors */
+  --dark-50: hsl(248 44% 97%);
+  --dark-100: hsl(241 50% 95%);
+  --dark-300: hsl(203 23% 83%);
+  --dark-400: hsl(202 23% 64%);
+  --dark-500: hsl(202 23% 45%);
+  --dark-600: hsl(202 23% 34%);
+  --dark-700: hsl(202 23% 20%);
+  --dark-800: hsl(202 23% 11%);
+  --dark-900: hsl(202 23% 5%);
+  
+  /* Security colors */
+  --success-500: hsl(159 60% 52%);
+  --success-600: hsl(159 60% 42%);
+  --warning-500: hsl(42 89% 48%);
+  
+  /* Fonts */
+  --font-inter: 'Inter', sans-serif;
+}
+
+.dark {
+  --background: hsl(202 23% 5%);
+  --foreground: hsl(248 44% 97%);
+  --card: hsl(202 23% 11%);
+  --card-foreground: hsl(248 44% 97%);
+  --popover: hsl(202 23% 5%);
+  --popover-foreground: hsl(248 44% 97%);
+  --primary: hsl(217.2 91.2% 59.8%);
+  --primary-foreground: hsl(202 23% 5%);
+  --secondary: hsl(202 23% 11%);
+  --secondary-foreground: hsl(248 44% 97%);
+  --muted: hsl(202 23% 15%);
+  --muted-foreground: hsl(202 23% 64%);
+  --accent: hsl(202 23% 15%);
+  --accent-foreground: hsl(248 44% 97%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(202 23% 20%);
+  --input: hsl(202 23% 20%);
+  --ring: hsl(217.2 91.2% 59.8%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-inter);
+  }
+  
+  .animate-pulse-success {
+    animation: pulse-success 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse-success {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+  }
+}
+
+@layer utilities {
+  .text-dark-50 { color: var(--dark-50); }
+  .text-dark-100 { color: var(--dark-100); }
+  .text-dark-300 { color: var(--dark-300); }
+  .text-dark-400 { color: var(--dark-400); }
+  .text-dark-500 { color: var(--dark-500); }
+  .text-dark-600 { color: var(--dark-600); }
+  .text-dark-700 { color: var(--dark-700); }
+  .text-dark-800 { color: var(--dark-800); }
+  .text-dark-900 { color: var(--dark-900); }
+  
+  .bg-dark-50 { background-color: var(--dark-50); }
+  .bg-dark-100 { background-color: var(--dark-100); }
+  .bg-dark-300 { background-color: var(--dark-300); }
+  .bg-dark-400 { background-color: var(--dark-400); }
+  .bg-dark-500 { background-color: var(--dark-500); }
+  .bg-dark-600 { background-color: var(--dark-600); }
+  .bg-dark-700 { background-color: var(--dark-700); }
+  .bg-dark-800 { background-color: var(--dark-800); }
+  .bg-dark-900 { background-color: var(--dark-900); }
+  
+  .border-dark-600 { border-color: var(--dark-600); }
+  .border-dark-700 { border-color: var(--dark-700); }
+  
+  .text-success-500 { color: var(--success-500); }
+  .text-success-600 { color: var(--success-600); }
+  .bg-success-500 { background-color: var(--success-500); }
+  .bg-success-600 { background-color: var(--success-600); }
+  
+  .text-warning-500 { color: var(--warning-500); }
+  .bg-warning-500 { background-color: var(--warning-500); }
+  
+  .hover\:bg-dark-600:hover { background-color: var(--dark-600); }
+  .hover\:bg-dark-700:hover { background-color: var(--dark-700); }
+  .hover\:text-dark-200:hover { color: var(--dark-300); }
+  .hover\:text-white:hover { color: white; }
+  
+  .focus\:border-primary:focus { border-color: hsl(var(--primary)); }
+}
